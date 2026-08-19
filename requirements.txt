@@ -1,8 +1,6 @@
 streamlit
-joblib
-scikit-learn
+cloudpickle
+scikit-learn==1.6.1
+numpy==2.0.2
 pandas
-numpy
 scipy
-nltk
-xgboost

@@ -1,5 +1,4 @@
 import streamlit as st
-import joblib
 import nltk
 
 # NLTK resources
@@ -8,7 +7,10 @@ nltk.download("punkt_tab", quiet=True)
 nltk.download("stopwords", quiet=True)
 
 # Load model
-model = joblib.load("spam_classifier_pipeline.pkl")
+import cloudpickle
+
+with open("spam_classifier_pipeline.pkl", "rb") as f:
+    model = cloudpickle.load(f)
 
 st.set_page_config(
     page_title="SMS Spam Classifier",
